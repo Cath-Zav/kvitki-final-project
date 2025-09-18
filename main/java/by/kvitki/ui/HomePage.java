@@ -38,5 +38,3 @@ public class HomePage {
         Webdriver.clickElement(LINK_PERSONAL_CABINET);
     }
 }
-
-

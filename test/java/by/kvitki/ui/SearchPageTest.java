@@ -6,6 +6,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class SearchPageTest {
     @BeforeEach
     public void openHomePage() {
@@ -42,6 +44,10 @@ public class SearchPageTest {
         List<String> searchResults = searchPage.getSearchResultItemsTitleText();
         System.out.println(searchResults.size());
 
+        assertThat(searchResults)
+                .as("The list of searches should not be empty")
+                .isNotEmpty();
+
         SoftAssertions softly = new SoftAssertions();
         for (int i = 0; i < searchResults.size(); i++) {
             String title = searchResults.get(i);
@@ -59,7 +65,7 @@ public class SearchPageTest {
         SearchPage searchPage = new SearchPage();
         searchPage.sendKeysSearch("dfdgdfgf");
         searchPage.startSearch();
-        Webdriver.pauseSeconds(5);
+        Webdriver.pauseSeconds(20);
 
         Assertions.assertEquals("По вашему запросу ничего не найдено", searchPage.getTitleNothingFound());
     }

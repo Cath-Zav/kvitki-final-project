@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchPage {
-    private final String INPUT_SEARCH = "//input[@class='search_component_input input_component floating_placeholder_input_element']";
+    private final String INPUT_SEARCH = "//input[@class='search_component_input input_component']";
     private final String BUTTON_SEARCH = "//a[@class='iconpl-search search_component_button']";
     private final String TITLE_SEARCH_RESULT = "//span[@class='event_short_top_bottom']";
     private final String TITLE_NOTHING_FOUND = "//div[@class='search_results_no_results_msg']";

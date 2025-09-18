@@ -32,6 +32,7 @@ public class LoginPage {
         sendKeyLogin(email);
         sendKeyPassword(password);
         Webdriver.clickElement(BUTTON_LOGIN);
+        Webdriver.pauseSeconds(5);
 
         return new AccountPage().waitUntilLoaded();
     }
